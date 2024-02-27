@@ -15,13 +15,18 @@ function getArrayParams(...arr) {
 
   return { min: min, max: max, avg: avg };
 }
-
 function summElementsWorker(...arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
 
 }
-
 function differenceMaxMinWorker(...arr) {
-
+  let diff = 0;
+  diff = Math.max(...arr) - Math.min(...arr);
+    return diff; 
 }
 
 function differenceEvenOddWorker(...arr) {
