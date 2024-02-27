@@ -25,8 +25,12 @@ function summElementsWorker(...arr) {
 }
 function differenceMaxMinWorker(...arr) {
   let diff = 0;
-  diff = Math.max(...arr) - Math.min(...arr);
-    return diff; 
+  if (arr.length === 0){
+    diff = 0;
+    return diff;
+  } else {
+diff = Math.max(...arr) - Math.min(...arr);
+  return diff; }
 }
 
 function differenceEvenOddWorker(...arr) {
