@@ -2,10 +2,11 @@ function Student(name, gender, age) {
     this.name = name;
     this.gender = gender;
     this.age = age;
+    
     this.marks = [];
     
 }
-//this.marks = [];
+
 let student1 = new Student("Василиса", "женский", 19);
 let student2 = new Student("Артём", "мужской", 25);
 
@@ -14,33 +15,30 @@ Student.prototype.setSubject = function (subjectName) {
 }
 
 Student.prototype.addMarks = function (...marksToAdd) {
-    
-    if (marksToAdd.length === 0) {
-        return;
-      } 
-      this.marks.push(...marksToAdd);
+ 
+  if (Student.hasOwnProperty("this.marks")) {
+    this.marks.push(...marksToAdd);
+  } else {
+    return;
+  }
+   
 }
 
 Student.prototype.getAverage = function () {
-    let sum = 0;
-    let length = this.marks.length;
-    if (length == 0) {
+    if (this.marks === 0) {
       return 0;
-    } else {
-      for (let i = 0; i < length; i += 1) { 
+    } 
+    let sum = 0;
+    for (let i = 0; i < this.marks.length; i += 1) { 
         sum += this.marks[i]; 
       }
-      return sum / length;
-    }
+      return sum / this.marks.length;
+    
 }
 
 Student.prototype.exclude = function (reason) {
-    if (!this.excluded) {
         delete this.subject;
         delete this.marks;
         this.excluded = reason;
-    }
-    if (this.subject == 0) {
-        !this.marks.push(...marksToAdd);
-      }
+       
 }
