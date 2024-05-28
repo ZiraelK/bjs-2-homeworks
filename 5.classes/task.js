@@ -60,3 +60,33 @@ class FantasticBook extends Book {
       this.type = 'detective';
     }
   }
+
+class Library (name, books) {
+  constructor (name) {
+    this.name = name;
+    books = [];
+  }
+  addBook(book) {
+    if (book.state > 30) {
+      this.books.push(book);
+    }
+  }
+  findBookBy(type, value) {
+    for (let book of this.books) {
+      if (book[type] === value) {
+        return book;
+      }
+    }
+    return null;
+  }
+  
+  giveBookByName(bookName) {
+    const book = this.findBookBy('name', bookName);
+    if (book) {
+      this.books.splice(this.books.indexOf(book), 1);
+      return book;
+    } else {
+      return null;
+    }
+  }
+}
