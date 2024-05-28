@@ -3,8 +3,8 @@ class PrintEditionItem {
         this.name = name;
         this.releaseDate = releaseDate;
         this.pagesCount = pagesCount;
-        state === 100;
-        type === null;
+        state = 100;
+        type = null;
     }
     fix() {
         this.state *= 1.5;
