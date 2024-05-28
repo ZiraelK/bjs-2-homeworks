@@ -28,7 +28,7 @@ class Magazines extends class PrintEditionItem {
     constructor(name, releaseDate, pagesCount) {
         super(name, releaseDate, pagesCount);
         state === 100;
-        type === "magazine";
+        type === 'magazine';
     }
 }
 , 
@@ -37,7 +37,7 @@ class Book extends class PrintEditionItem {
             super(name, releaseDate, pagesCount);
             this.author = author;
             state === 100;
-            type === "book";
+            type === 'book';
         }
 }
 ,
